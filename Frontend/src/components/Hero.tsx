@@ -72,17 +72,10 @@ export function Hero() {
         >
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02] shadow-[0_0_60px_rgba(18,94,84,0.18)]">
             <img
-<<<<<<< HEAD
-              src="/Professional Portrait with Crossed Arms.png"
+              src={`${import.meta.env.BASE_URL}Professional Portrait with Crossed Arms.png`}
               alt="Dhanush portrait"
-              className="h-[540px] w-auto object-cover max-w-full sm:h-[620px]"
+              className="h-[540px] w-auto max-w-full object-cover sm:h-[620px]"
             />
-=======
-  src={`${import.meta.env.BASE_URL}Professional Portrait with Crossed Arms.png`}
-  alt="Dhanush portrait"
-  className="h-[540px] w-auto max-w-full object-cover sm:h-[620px]"
-/>
->>>>>>> 79a189032710b2f2c955064a2f9fd2d4eff4919e
           </div>
         </motion.div>
       </div>

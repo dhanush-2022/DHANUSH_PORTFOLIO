@@ -27,11 +27,7 @@ export const profile = {
   email: 'er.dhanushkumaravel@gmail.com',
   phone: '+91-8610567852',
   phoneHref: 'tel:+918610567852',
-<<<<<<< HEAD
   resumeUrl: `${import.meta.env.BASE_URL}Dhanush_Resume21.pdf`
-=======
-  resumeUrl: '/Dhanush_Resume21.pdf'
->>>>>>> 79a189032710b2f2c955064a2f9fd2d4eff4919e
 };
 
 export const navItems = [
