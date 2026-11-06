@@ -7,23 +7,24 @@ export default {
     extend: {
       colors: {
         ink: {
-          DEFAULT: '#07090B',
-          900: '#0A0D10',
-          800: '#0F1317',
-          700: '#161B21',
+          DEFAULT: '#050505',
+          900: '#090A0D',
+          800: '#101217',
+          700: '#191C24',
         },
         fg: {
-          DEFAULT: '#E9EDF0',
-          muted: '#98A2AB',
-          subtle: '#646E77',
+          DEFAULT: '#FFFFFF',
+          muted: '#E2E2E2',
+          subtle: '#C4C4C4',
         },
         signal: {
-          DEFAULT: '#3FCF9F',
-          dim: '#2B8F6F',
+          DEFAULT: '#FF334F',
+          dim: '#A8172C',
         },
-        aqua: '#5BC4D6',
-        steel: '#6D97E8',
-        threat: '#E0A04E',
+        aqua: '#75B9FF',
+        steel: '#4C8DFF',
+        violet: '#8D65FF',
+        threat: '#FF5268',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { MenuIcon, XIcon } from 'lucide-react';
 import { navIds, navItems } from '../data/portfolio';
 import { useActiveSection } from '../hooks/useActiveSection';
@@ -8,6 +8,7 @@ import { StatusDot } from './StatusDot';
 
 export function Navbar() {
   const active = useActiveSection(navIds);
+  const reduce = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -42,7 +43,7 @@ export function Navbar() {
                 <a
                   href={`#${item.id}`}
                   aria-current={isActive ? 'true' : undefined}
-                  className={`relative block rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
+                  className={`relative block rounded-full px-2.5 py-2 text-[12px] font-medium transition-colors duration-200 ${
                   isActive ? 'text-fg' : 'text-fg-muted hover:text-fg'}`
                   }>
                   
@@ -71,7 +72,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-fg lg:hidden">
+          className="glass-button grid h-10 w-10 place-items-center rounded-lg text-fg lg:hidden">
           
           {open ? <XIcon size={18} /> : <MenuIcon size={18} />}
         </button>
@@ -81,10 +82,10 @@ export function Navbar() {
         {open &&
         <motion.div
           id="mobile-menu"
-          initial={{ opacity: 0, y: -8 }}
+          initial={reduce ? { opacity: 1 } : { opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.22, ease: easeOut }}
+          exit={reduce ? { opacity: 1 } : { opacity: 0, y: -8 }}
+          transition={{ duration: reduce ? 0 : 0.22, ease: easeOut }}
           className="border-t border-white/[0.06] px-6 pb-6 pt-3 lg:hidden">
           
             <ul className="flex flex-col">

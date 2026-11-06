@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CheckIcon, CopyIcon, DownloadIcon, MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
 import { profile } from '../data/portfolio';
 import { getResumeLink } from '../utils/resume';
@@ -27,11 +27,11 @@ export function Contact() {
         <Reveal>
           <GlassCard interactive={false} className="grid gap-12 rounded-3xl p-7 sm:p-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16 lg:p-16">
             <div className="flex flex-col">
-              <p className="flex items-center gap-2.5 font-mono text-[11px] tracking-[0.2em] text-signal">
+              <p className="flex items-center gap-2.5 font-mono text-[11px] tracking-[0.2em] text-fg">
                 <StatusDot />
                 AVAILABLE FOR CYBERSECURITY OPPORTUNITIES
               </p>
-              <h2 className="mt-6 text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-fg sm:text-6xl lg:text-7xl">
+              <h2 className="display-heading mt-6 text-5xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
                 Let's Secure
                 <br />
                 What Matters.
@@ -69,7 +69,7 @@ export function Contact() {
                       type="button"
                       onClick={copyEmail}
                       aria-label={copied ? 'Email copied' : 'Copy email address'}
-                      className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-white/[0.08] text-fg-muted transition-colors duration-200 hover:border-white/20 hover:text-fg">
+                      className="glass-button grid h-8 w-8 shrink-0 place-items-center rounded-lg text-fg-muted transition-colors duration-200 hover:text-fg">
                       
                       {copied ? <CheckIcon size={14} className="text-signal" /> : <CopyIcon size={14} />}
                     </button>

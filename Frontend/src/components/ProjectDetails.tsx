@@ -1,4 +1,3 @@
-import React from 'react';
 import { projectComponents } from '../data/portfolio';
 import { GlassCard } from './GlassCard';
 import { Reveal } from './Reveal';
@@ -7,7 +6,7 @@ export function ProjectDetails() {
   return (
     <section aria-labelledby="project-details-title" className="relative pb-24 lg:pb-32">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
-        <Reveal className="flex flex-wrap items-end justify-between gap-4">
+        <Reveal fromSide="left" className="flex flex-wrap items-end justify-between gap-4">
           <h2 id="project-details-title" className="text-2xl font-semibold tracking-[-0.02em] text-fg sm:text-3xl">
             Project Details
           </h2>
@@ -17,7 +16,7 @@ export function ProjectDetails() {
           {projectComponents.map((component, i) => {
             const Icon = component.icon;
             return (
-              <Reveal key={component.title} delay={i * 0.06} className="h-full">
+              <Reveal key={component.title} fromSide={i % 2 === 0 ? 'left' : 'right'} delay={i * 0.06} className="h-full">
                 <GlassCard tilt className="flex h-full flex-col p-7">
                   <div className="flex items-center justify-between">
                     <span className="grid h-11 w-11 place-items-center rounded-xl bg-signal/10 text-signal">

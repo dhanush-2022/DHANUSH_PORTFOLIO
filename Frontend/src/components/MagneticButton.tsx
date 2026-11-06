@@ -5,7 +5,7 @@ type MagneticButtonProps = {
   href: string;
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
-  download?: boolean;
+  download?: boolean | string;
   className?: string;
 };
 
@@ -31,8 +31,8 @@ export function MagneticButton({ href, children, variant = 'primary', download, 
 
   const styles =
   variant === 'primary' ?
-  'bg-signal text-ink hover:bg-[#52dcae] shadow-[0_10px_30px_-12px_rgba(63,207,159,0.55)]' :
-  'border border-white/[0.12] bg-white/[0.03] text-fg backdrop-blur-md hover:border-white/25 hover:bg-white/[0.06]';
+  'glass-button glass-button--accent text-white' :
+  'glass-button text-fg';
 
   return (
     <motion.a
@@ -41,7 +41,7 @@ export function MagneticButton({ href, children, variant = 'primary', download, 
       download={download || undefined}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      whileTap={{ scale: 0.97 }}
+      whileTap={reduce ? undefined : { scale: 0.97 }}
       style={{ x: sx, y: sy }}
       className={`inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 text-sm font-semibold transition-[background-color,border-color,box-shadow] duration-200 ease-out ${styles} ${className}`}>
       

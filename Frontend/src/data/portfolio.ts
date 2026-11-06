@@ -33,14 +33,17 @@ export const profile = {
 export const navItems = [
 { id: 'home', label: 'Home' },
 { id: 'about', label: 'About' },
+{ id: 'experience', label: 'Experience' },
 { id: 'skills', label: 'Skills' },
 { id: 'projects', label: 'Projects' },
-{ id: 'experience', label: 'Experience' },
+{ id: 'soc', label: 'SOC' },
+{ id: 'toolkit', label: 'Tools' },
 { id: 'certifications', label: 'Certifications' },
+{ id: 'resume', label: 'Resume' },
 { id: 'contact', label: 'Contact' }];
 
 
-export const navIds = ['home', 'about', 'skills', 'projects', 'experience', 'certifications', 'contact'];
+export const navIds = ['home', 'about', 'experience', 'skills', 'projects', 'soc', 'toolkit', 'certifications', 'resume', 'contact'];
 
 export const trainingAreas = [
 'Security Operations Center practices',
@@ -120,30 +123,16 @@ export type Tool = {
   name: string;
   role: string;
   icon: LucideIcon;
-  x: number;
-  y: number;
-  hub?: boolean;
 };
 
 export const tools: Tool[] = [
-{ id: 'kali', name: 'Kali Linux', role: 'Attack simulation', icon: Crosshair, x: 11, y: 22 },
-{ id: 'network', name: 'Network Security Tools', role: 'Network analysis', icon: Network, x: 11, y: 78 },
-{ id: 'cowrie', name: 'Cowrie', role: 'SSH / Telnet honeypot', icon: Server, x: 37, y: 26 },
-{ id: 'linux', name: 'Linux', role: 'Host & lab systems', icon: Terminal, x: 37, y: 80 },
-{ id: 'wazuh', name: 'Wazuh', role: 'Security monitoring platform', icon: ShieldCheck, x: 63, y: 50, hub: true },
-{ id: 'siem', name: 'SIEM', role: 'Centralized log analysis', icon: Database, x: 89, y: 22 },
-{ id: 'web', name: 'Web Security Testing', role: 'Application testing', icon: AppWindow, x: 89, y: 78 }];
-
-
-export const toolLinks: [string, string][] = [
-['kali', 'cowrie'],
-['kali', 'network'],
-['network', 'linux'],
-['linux', 'cowrie'],
-['linux', 'wazuh'],
-['cowrie', 'wazuh'],
-['wazuh', 'siem'],
-['wazuh', 'web']];
+{ id: 'kali', name: 'Kali Linux', role: 'Attack Simulation & Penetration Testing', icon: Crosshair },
+{ id: 'network', name: 'Network Security', role: 'Traffic Analysis, IDS/IPS & Firewall Integration', icon: Network },
+{ id: 'cowrie', name: 'Cowrie', role: 'SSH / Telnet Honeypot & Attacker Analysis', icon: Server },
+{ id: 'linux', name: 'Linux Lab', role: 'Host Hardening, Log Analysis & Security Operations', icon: Terminal },
+{ id: 'wazuh', name: 'Wazuh', role: 'Security Monitoring, Logging & Incident Response', icon: ShieldCheck },
+{ id: 'siem', name: 'SIEM', role: 'Centralized Log Analysis & Threat Detection', icon: Database },
+{ id: 'web', name: 'Web Security Testing', role: 'Vulnerability Assessment & Application Security', icon: AppWindow }];
 
 
 export type FlowStage = {
@@ -225,20 +214,43 @@ export const projectComponents: ProjectComponent[] = [
 }];
 
 
-export const experience = {
-  role: 'Cybersecurity Intern',
-  company: 'ThinkInfo Expert Solutions',
-  period: 'November 2025 – March 2026',
-  shortPeriod: 'Nov 2025 — Mar 2026',
-  responsibilities: [
-  'Practical SOC and network security monitoring',
-  'Vulnerability assessment',
-  'Penetration testing of web applications and network environments',
-  'Security testing activities for the WebFoxShield cybersecurity platform',
-  'Wazuh client-server log monitoring',
-  'Identification of anomalies and security incidents']
-
-};
+export const experience = [
+ {
+   role: 'SOC Analyst',
+   company: 'Hadescore Technologies',
+   focus: 'Cybersecurity & Security Operations',
+   label: 'CURRENT ROLE',
+   period: 'Present',
+   shortPeriod: 'Present',
+   summary:
+     'Contributing to cybersecurity operations, security monitoring, threat detection, vulnerability assessment, and defensive security engineering. Implementing and managing security monitoring solutions, analyzing system and network logs, investigating suspicious activities, and developing practical solutions to strengthen security infrastructure.'
+ },
+ {
+   role: 'Project Contributor',
+   company: 'Gray Hat AI',
+   label: 'PROJECT CONTRIBUTOR',
+   focus: 'Cybersecurity & Product Development',
+   period: 'Present',
+   shortPeriod: 'Present',
+   summary:
+     'Contributing to the development of an AI-powered cybersecurity learning and practical security platform designed to help students and aspiring security professionals develop real-world cybersecurity skills through hands-on learning, practical environments, and security-focused tools.'
+ },
+ {
+   role: 'Cybersecurity Intern',
+   company: 'ThinkInfo Expert Solutions',
+   label: 'INTERNSHIP',
+   period: 'November 2025 – March 2026',
+   shortPeriod: 'Nov 2025 — Mar 2026',
+   responsibilities: [
+     'Practical SOC and network security monitoring',
+     'Vulnerability assessment',
+     'Penetration testing of web applications and network environments',
+     'Security testing activities for the WebFoxShield cybersecurity platform',
+     'Wazuh client-server log monitoring',
+     'Identification of anomalies and security incidents'
+   ]
+ }
+];
 
 export const education = {
   degree: 'Bachelor of Engineering (B.E)',

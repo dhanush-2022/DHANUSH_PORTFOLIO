@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function SectionDivider() {
   return (
     <div aria-hidden className="mx-auto max-w-[1320px] px-6 lg:px-10">

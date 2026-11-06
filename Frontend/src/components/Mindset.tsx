@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { mindsetStages } from '../data/portfolio';
 import { Reveal } from './Reveal';
@@ -25,7 +25,7 @@ export function Mindset() {
           align="center" />
         
 
-        <Reveal delay={0.1}>
+        <Reveal fromSide="right" delay={0.1}>
           <ol
             className="relative mt-16 grid gap-2 lg:grid-cols-6 lg:gap-4"
             onMouseEnter={() => setPaused(true)}
@@ -55,19 +55,19 @@ export function Mindset() {
                     onBlur={() => setPaused(false)}
                     onClick={() => setActive(i)}
                     aria-pressed={isActive}
-                    className="flex w-full items-start gap-5 rounded-2xl p-1 text-left lg:flex-col lg:items-center lg:gap-0 lg:text-center">
+                    className="glass-button flex w-full items-start gap-5 rounded-2xl p-1 text-left lg:flex-col lg:items-center lg:gap-0 lg:text-center">
                     
                     <span className="relative grid h-16 w-16 shrink-0 place-items-center">
                       {isActive &&
                       <motion.span
                         layoutId="mindset-liquid"
-                        className="liquid-node absolute inset-0 border border-signal/40 bg-[#0f2a22] shadow-[0_0_30px_-8px_rgba(63,207,159,0.55)]"
+                        className="liquid-node absolute inset-0 border border-signal/40 bg-signal/10 shadow-[0_0_30px_-8px_rgba(255,51,79,0.55)] backdrop-blur-md"
                         transition={{ type: 'spring', stiffness: 180, damping: 24 }} />
 
                       }
                       <span
                         className={`relative grid h-14 w-14 place-items-center rounded-full transition-[background-color,border-color,color] duration-300 ${
-                        isActive ? 'text-signal' : 'border border-white/10 bg-ink-900 text-fg-muted'}`
+                        isActive ? 'text-fg' : 'border border-white/10 bg-ink-900 text-fg-muted'}`
                         }>
                         
                         <Icon size={20} strokeWidth={1.5} aria-hidden />

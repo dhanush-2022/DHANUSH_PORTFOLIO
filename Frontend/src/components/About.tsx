@@ -21,7 +21,7 @@ export function About() {
       <div className="mx-auto grid max-w-[1320px] gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-10">
         <div>
           <SectionHeading eyebrow="Profile" title="About Me" />
-          <Reveal delay={0.1} className="mt-8 space-y-5 text-base leading-relaxed text-fg-muted sm:text-lg">
+          <Reveal fromSide="left" delay={0.1} className="mt-8 space-y-5 text-base leading-relaxed text-fg-muted sm:text-lg">
             <p>
               I'm a cybersecurity professional with hands-on training in Security Operations Center practices — monitoring,
               detecting, and investigating security events across networks, hosts, and applications.
@@ -73,13 +73,13 @@ export function About() {
                     {step === i &&
                   <motion.span
                     layoutId="about-pipe"
-                    className="liquid-node absolute inset-0 border border-signal/30 bg-signal/10"
+                      className="absolute inset-0 rounded-lg border border-signal/30 bg-signal/10"
                     transition={{ type: 'spring', stiffness: 220, damping: 28 }} />
 
                   }
                     <span
                     className={`relative font-mono text-[11px] tracking-[0.16em] transition-colors duration-300 ${
-                    step === i ? 'text-signal' : 'text-fg-muted'}`
+                    step === i ? 'text-fg' : 'text-fg-muted'}`
                     }>
                     
                       {stage.toUpperCase()}

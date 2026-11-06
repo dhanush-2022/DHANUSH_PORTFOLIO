@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { flowStages, projectTags } from '../data/portfolio';
 import { easeOut } from '../utils/motion';
@@ -28,8 +28,8 @@ export function FeaturedProject() {
         <Reveal delay={0.1} className="mt-14">
           <GlassCard interactive={false} className="grid gap-12 rounded-3xl p-7 sm:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:p-14">
             <div className="flex flex-col">
-              <p className="font-mono text-xs tracking-[0.16em] text-signal">COWRIE + WAZUH SOC LAB</p>
-              <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.03em] text-fg sm:text-[40px]">
+              <p className="font-mono text-xs tracking-[0.16em] text-fg">COWRIE + WAZUH SOC LAB</p>
+              <h3 className="display-heading mt-4 text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-[40px]">
                 Honeypot-Based Threat Detection &amp; Log Analysis
               </h3>
               <p className="mt-6 text-base leading-relaxed text-fg-muted sm:text-[17px]">
@@ -93,19 +93,19 @@ export function FeaturedProject() {
                         onBlur={() => setPaused(false)}
                         onClick={() => setActive(i)}
                         aria-pressed={isActive}
-                        className="relative flex w-full items-center gap-4 rounded-xl py-1.5 pr-3 text-left">
+                        className="glass-button relative flex w-full items-center gap-4 rounded-xl py-1.5 pr-3 text-left">
                         
                         {isActive &&
                         <motion.span
                           layoutId="flow-active"
-                          className="absolute inset-0 rounded-xl border border-white/[0.06] bg-white/[0.03]"
+                          className="absolute inset-0 rounded-xl border border-signal/20 bg-white/[0.035] backdrop-blur-md"
                           transition={{ type: 'spring', stiffness: 320, damping: 32 }} />
 
                         }
                         <span
                           className={`relative grid h-12 w-12 shrink-0 place-items-center rounded-xl border transition-[border-color,background-color,box-shadow,color] duration-300 ${
                           isActive ?
-                          'border-signal/50 bg-[#0f2a22] text-signal shadow-[0_0_26px_-6px_rgba(63,207,159,0.55)]' :
+                          'border-signal/50 bg-[#2a0f16] text-signal shadow-[0_0_26px_-6px_rgba(255,51,79,0.55)]' :
                           passed ?
                           'border-white/10 bg-ink-800 text-fg-muted' :
                           'border-white/[0.07] bg-ink-900 text-fg-subtle'}`

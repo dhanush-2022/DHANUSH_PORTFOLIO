@@ -1,4 +1,3 @@
-import React from 'react';
 import { profile } from '../data/portfolio';
 
 export function Footer() {
